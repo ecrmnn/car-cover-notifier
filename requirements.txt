@@ -1,0 +1,4 @@
+python_dotenv==0.6.3
+requests==2.13.0
+slackclient==1.0.5
+xmltodict==0.10.2
