@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
 import requests
 import xmltodict
 import datetime
@@ -33,7 +32,8 @@ for time in times:
         temperatures.append(time['temperature']['@value'])
 
 def belowFreezingPoint(temperature):
-    return temperature <= 0
+    if int(temperature) <= 0:
+        return int(temperature)
 
 # If the temperature is less than or equal to 0 degrees celcius, trigger notification
 degreesBelowFreezing = filter(belowFreezingPoint, temperatures)
